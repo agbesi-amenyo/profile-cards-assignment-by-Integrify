@@ -1,25 +1,25 @@
-import React from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import UserInfo from '../components/UserInfo';
-
+import UserInfo from "../components/UserInfo";
 
 const DetailsPage = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
-    <div className="container my-5">
-    <div className='back'
-      onClick={() => {
-        navigate(-1);
-      }}
-    >
-      <span>&#8678;</span>
-      <span>Back</span>
+    <div className="justify-content-center max-w-screen md:px-20 mx-auto">
+      <div
+        className="back"
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        <span>&#8678;</span>
+        <span>Back</span>
+      </div>
+
+      <UserInfo />
     </div>
+  );
+};
 
-    <UserInfo />
-  </div>
-  )
-}
-
-export default DetailsPage
+export default DetailsPage;

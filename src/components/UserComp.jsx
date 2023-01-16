@@ -1,20 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 const UserComp = ({ ...user }) => {
-  const navigate = useNavigate();
-
-  const handleClick = (user) => {
-    navigate("/user-info", { state: { user } });
-    let view = JSON.parse(localStorage.getItem("lastViewed") || "[]");
-    if (view.length === 3) view.shift();
-    view.push(user);
-    localStorage.setItem("lastViewed", JSON.stringify(view));
-  };
   return (
     <div className="frame">
       <div className="center">
-        <div classNmae="profile">
+        <div className="">
           <div className="image">
             <div className="circle1"></div>
             <div className="circle2"></div>
@@ -24,19 +15,16 @@ const UserComp = ({ ...user }) => {
             </div>
           </div>
           <div className="name">{user?.name}</div>
-          <div className="username">Username: {user?.username}</div>
+          <div className="username">{user?.email}</div>
           <div className="actions">
-            <button className="moreInfo" onClick={() => handleClick(user)}>
-              More Details...
-            </button>
+            <Button {...user} />
           </div>
-
         </div>
         <div className="stats">
-            <div className="box">
-                <span className="value">Male</span>
-                <span className="parameter">Gender</span>
-            </div>
+          <div className="box">
+            <span className="value">{user?.username}</span>
+            <span className="parameter">Username</span>
+          </div>
         </div>
       </div>
     </div>

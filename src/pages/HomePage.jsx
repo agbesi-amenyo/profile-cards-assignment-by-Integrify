@@ -18,22 +18,23 @@ const HomePage = () => {
     getUsers();
   }, []);
 
-  console.log(users[0])
   return loader ? (
     <div className="flex justify-center items-center h-screen w-screen overflow-hidden ">
       <DotLoader size="80px" color="#ca7c4e" />
     </div>
   ) : (
-    <div className=" my-5 ">
-      <div className="row justify-content-center">
-      <div className="text-5xl font-semibold my-10 text-center text-[#786450]">Users</div>
+    <div className="my-5">
+      <div className=" justify-content-center max-w-screen md:px-20 mx-auto">
+      <div className="text-5xl font-semibold text-center text-[#786450] uppercase">All Users</div>
+      <div className="flex mx- flex-wrap gap-8 justify-center my-4 text-center">
         {users?.map((user) => {
           return (
-            <div key={user.name} className="col">
+            <div key={user.name} className="">
               <UserComp {...user} />
             </div>
           );
         })}
+        </div>  
       </div>
     </div>
   );

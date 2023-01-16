@@ -24,12 +24,12 @@
     height: 299px;
     width: 320px;
     background: #fff;
+    position: relative;
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
   }
   .profile {
-    float: left;
     width: 200px;
     height: 320px;
     text-align: center;
@@ -38,10 +38,10 @@
   .profile:hover {
     cursor: pointer;
   }
-  .profile:nth-child(1) {
+  .image:hover .circle1 {
     transform: rotate(360deg);
   }
-  .profile:nth-child(2) {
+  .image:hover .circle2 {
     transform: rotate(-360deg);
   }
   .image {
@@ -92,7 +92,6 @@
   }
   .username {
     font-size: 12px;
-    line-height: 15px;
   }
   .actions {
     margin-top: 33px;
@@ -113,29 +112,25 @@
     transition: all 0.3s ease-in-out;
     color: #786450;
   }
-  .moreInfo:hover:hover {
+  .moreInfo:hover {
     background: #786450;
     color: #fff;
   }
   .stats {
-    float: left;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
   }
   .box {
     box-sizing: border-box;
-    width: 120px;
-    height: 99px;
+    width: 100%;
     background: #f5e8df;
     text-align: center;
-    padding-top: 28px;
     transition: all 0.4s ease-in-out;
-    margin: 1px 0;
   }
   .box:hover {
     background: #e1cfc2;
     cursor: pointer;
-  }
-  .box:nth-child(2) {
-    margin: 1px 0;
   }
 
   .box span {
@@ -169,7 +164,7 @@
     width: 100%;
     padding: 15px;
     background: #fff;
-    border-radius: 3px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
   }
@@ -177,6 +172,8 @@
     color: #786450;
     font-weight: 700;
     cursor: pointer;
+    width: auto;
+    display: inline-block;
     outline: none;
     border: none;
     align-items: center;
